@@ -1,3 +1,5 @@
+// incrementing viewer count in db
+
 import { NextApiRequest, NextApiResponse } from 'next';
 import { PrismaClient } from '@prisma/client';
 

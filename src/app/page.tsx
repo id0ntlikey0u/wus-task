@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 
 
 export default function Home() {
-  // Declare a new state variable
+  // Declare a new state variable, in this case quote
   const [quote, setQuote] = useState('');
 
   // Generate new quote and throw error if that fails
@@ -19,8 +19,10 @@ export default function Home() {
     }
   };
 
+  // Declare a new state variable, in this case count
   const [count, setCount] = useState<number | null>(null);
 
+  // Fetching count from db and incrementing it
   useEffect(() => {
     const fetchCount = async () => {
       const res = await fetch('/api/getCount');
@@ -35,10 +37,6 @@ export default function Home() {
     fetchCount();
     incrementCount();
   }, []);
-
-  if (count === null) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <body>
@@ -68,7 +66,7 @@ export default function Home() {
           <button onClick={getRandomQuote}>Generate Quote</button>
         </div>
       </main>
-      <footer className="text-center">
+      <footer>
         <p>Visitor Count: {count}</p>
       </footer>
     </body>

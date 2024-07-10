@@ -1,3 +1,4 @@
+// getting count from db and return value
 import { NextApiRequest, NextApiResponse } from 'next';
 import { PrismaClient } from '@prisma/client';
 
